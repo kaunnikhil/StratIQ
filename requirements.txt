@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pandas
+numpy
+ruptures
+chromadb
+sentence-transformers
+langchain
+streamlit
+pydantic
+pytest
+python-dotenv
+google-genai
