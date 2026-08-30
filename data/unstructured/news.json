@@ -1,0 +1,20 @@
+[
+  {
+    "id": "NW-01",
+    "week": 5,
+    "region": "Pune",
+    "text": "Local news: heavy monsoon rainfall causes waterlogging in several Pune suburbs this week, disrupting local commerce."
+  },
+  {
+    "id": "NW-02",
+    "week": 4,
+    "region": "national",
+    "text": "RBI raises repo rate by 25 basis points, citing inflation concerns; lenders expected to pass on higher rates."
+  },
+  {
+    "id": "NW-03",
+    "week": 5,
+    "region": "Pune",
+    "text": "A rival two-wheeler financier announces a zero-down-payment scheme for new customers in the Pune region."
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "primary_cause": "competitor_zero_down_payment_scheme",
+  "contributing_causes": [
+    "monsoon_flooding_footfall",
+    "field_agent_attrition",
+    "national_cibil_tightening",
+    "national_repo_rate_hike"
+  ],
+  "note": "Evaluation-only. Not to be read by retrieval or reasoning components."
+}

@@ -3,9 +3,7 @@ uvicorn
 pandas
 numpy
 ruptures
-chromadb
-sentence-transformers
-langchain
+scikit-learn
 streamlit
 pydantic
 pytest

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "DN-01",
+    "week": 3,
+    "branch": "Pune-Kothrud",
+    "region": "Pune",
+    "text": "Dealer mentioned one of our field executives has been unreachable this week; follow-up loan visits delayed."
+  },
+  {
+    "id": "DN-02",
+    "week": 4,
+    "branch": "Pune-Wagholi",
+    "region": "Pune",
+    "text": "Sourcing agent resigned; showroom staff handling walk-ins directly for now, slower turnaround."
+  },
+  {
+    "id": "DN-03",
+    "week": 5,
+    "branch": "Pune-Hadapsar",
+    "region": "Pune",
+    "text": "Heavy rain and waterlogging near the showroom this week, footfall visibly down."
+  },
+  {
+    "id": "DN-04",
+    "week": 5,
+    "branch": "Pune-Kondhwa",
+    "region": "Pune",
+    "text": "Access road flooded for two days, customers postponed showroom visits."
+  },
+  {
+    "id": "DN-05",
+    "week": 5,
+    "branch": "Pune-Shivajinagar",
+    "region": "Pune",
+    "text": "Customers asking if we can match the new zero-down-payment scheme from a rival NBFC."
+  },
+  {
+    "id": "DN-06",
+    "week": 6,
+    "branch": "Pune-Pimpri",
+    "region": "Pune",
+    "text": "Walk-ins mentioning a competitor's no-down-payment offer advertised locally this month."
+  },
+  {
+    "id": "DN-07",
+    "week": 6,
+    "branch": "Pune-Kothrud",
+    "region": "Pune",
+    "text": "Still short one field executive; backlog of pending loan file follow-ups growing."
+  },
+  {
+    "id": "DN-08",
+    "week": 4,
+    "branch": "Pune-Shivajinagar",
+    "region": "Pune",
+    "text": "A few applicants rejected this week under the revised credit score cutoff."
+  },
+  {
+    "id": "DN-09",
+    "week": 7,
+    "branch": "Pune-Hadapsar",
+    "region": "Pune",
+    "text": "Roads cleared but footfall still recovering slowly this week."
+  },
+  {
+    "id": "DN-10",
+    "week": 2,
+    "branch": "Nashik-College-Road",
+    "region": "Nashik",
+    "text": "Steady week, no unusual footfall or staffing changes to report."
+  },
+  {
+    "id": "DN-11",
+    "week": 6,
+    "branch": "Nashik-Gangapur",
+    "region": "Nashik",
+    "text": "Business as usual, in line with seasonal expectations."
+  },
+  {
+    "id": "DN-12",
+    "week": 4,
+    "branch": "Pune-Wagholi",
+    "region": "Pune",
+    "text": "Interest rate queries increasing slightly after the repo rate news."
+  },
+  {
+    "id": "DN-13",
+    "week": 7,
+    "branch": "Pune-Kondhwa",
+    "region": "Pune",
+    "text": "Local market still recovering from the flooding two weeks ago."
+  },
+  {
+    "id": "DN-14",
+    "week": 5,
+    "branch": "Pune-Pimpri",
+    "region": "Pune",
+    "text": "No flooding or staffing issue here, but footfall dipped slightly this week too."
+  },
+  {
+    "id": "DN-15",
+    "week": 3,
+    "branch": "Pune-Shivajinagar",
+    "region": "Pune",
+    "text": "New CIBIL cutoff means more applicants need a co-applicant to qualify."
+  },
+  {
+    "id": "DN-16",
+    "week": 8,
+    "branch": "Pune-Kothrud",
+    "region": "Pune",
+    "text": "New field executive hired, expected to join next week."
+  },
+  {
+    "id": "DN-17",
+    "week": 6,
+    "branch": "Pune-Hadapsar",
+    "region": "Pune",
+    "text": "Some customers went to the competitor showroom instead this week."
+  },
+  {
+    "id": "DN-18",
+    "week": 1,
+    "branch": "Pune-Wagholi",
+    "region": "Pune",
+    "text": "Normal week, all targets on track."
+  }
+]

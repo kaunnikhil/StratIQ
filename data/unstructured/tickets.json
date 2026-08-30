@@ -1,0 +1,62 @@
+[
+  {
+    "id": "TK-01",
+    "week": 5,
+    "region": "Pune",
+    "text": "Customer complaint: was told a rival NBFC offers zero down payment, asked why we don't match it."
+  },
+  {
+    "id": "TK-02",
+    "week": 5,
+    "region": "Pune",
+    "text": "Customer unable to reach showroom due to flooded access road, requested reschedule."
+  },
+  {
+    "id": "TK-03",
+    "week": 4,
+    "region": "Pune",
+    "text": "Loan application rejected; customer asked why the credit score requirement increased."
+  },
+  {
+    "id": "TK-04",
+    "week": 6,
+    "region": "Pune",
+    "text": "Delay in follow-up call after initial enquiry, customer went ahead with a different lender."
+  },
+  {
+    "id": "TK-05",
+    "week": 7,
+    "region": "Pune",
+    "text": "Complaint about slow processing time attributed to reduced staff at branch."
+  },
+  {
+    "id": "TK-06",
+    "week": 3,
+    "region": "Nashik",
+    "text": "Minor query about EMI schedule, resolved same day."
+  },
+  {
+    "id": "TK-07",
+    "week": 4,
+    "region": "Pune",
+    "text": "Customer asked about the new interest rate after hearing about the RBI repo rate hike."
+  },
+  {
+    "id": "TK-08",
+    "week": 6,
+    "region": "Pune",
+    "text": "Customer mentioned competitor's advertisement offering no down payment this month."
+  },
+  {
+    "id": "TK-09",
+    "week": 2,
+    "region": "Nashik",
+    "text": "Standard document submission query."
+  },
+  {
+    "id": "TK-10",
+    "week": 7,
+    "region": "Pune",
+    "text": "Follow-up delayed again, customer frustrated with response time."
+  }
+]
