@@ -1,4 +1,4 @@
-# CausalBoard
+# StratIQ
 
 **An AI analyst, not an AI narrator.** CausalBoard explains why a business KPI moved, ranks how confident it is in each explanation, and recommends the next action — instead of just visualizing that the metric changed.
 
