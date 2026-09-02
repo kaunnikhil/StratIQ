@@ -124,5 +124,40 @@
     "branch": "Pune-Wagholi",
     "region": "Pune",
     "text": "Normal week, all targets on track."
+  },
+  {
+    "id": "ADN-01",
+    "week": 7,
+    "branch": "Aurangabad-Cidco",
+    "region": "Aurangabad",
+    "text": "Dealer reported mixed customer activity and a softer conversion rate this week."
+  },
+  {
+    "id": "ADN-02",
+    "week": 7,
+    "branch": "Aurangabad-Waluj",
+    "region": "Aurangabad",
+    "text": "One experienced coordinator is unavailable; the team is adjusting workloads."
+  },
+  {
+    "id": "ADN-03",
+    "week": 8,
+    "branch": "Aurangabad-Garkheda",
+    "region": "Aurangabad",
+    "text": "Customer traffic has been uneven and several purchase decisions were delayed."
+  },
+  {
+    "id": "ADN-04",
+    "week": 8,
+    "branch": "Aurangabad-Cidco",
+    "region": "Aurangabad",
+    "text": "Some customers are comparing financing options before proceeding."
+  },
+  {
+    "id": "SDN-01",
+    "week": 2,
+    "branch": "Pune-VimanNagar-Pilot",
+    "region": "Pune-Pilot",
+    "text": "New pilot branch with limited operating history; activity is still being established."
   }
 ]

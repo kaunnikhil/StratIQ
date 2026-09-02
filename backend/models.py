@@ -18,6 +18,7 @@ class SignalResult(BaseModel):
 class StructuredEvidenceRow(BaseModel):
     source: str
     data: dict
+    method: str = "sql_structured_lookup"
 
 
 class UnstructuredDoc(BaseModel):
@@ -28,6 +29,18 @@ class UnstructuredDoc(BaseModel):
     branch: Optional[str] = None
     text: str
     relevance: float = 0.0
+    method: str = "tfidf_retrieval"
+
+
+class LLMTelemetry(BaseModel):
+    provider: str
+    model: str
+    latency_seconds: float
+    prompt_tokens: int = 0
+    output_tokens: int = 0
+    total_tokens: int = 0
+    estimated_cost_usd: float = 0.0
+    is_llm_call: bool = True
 
 
 class EvidenceBundle(BaseModel):
@@ -70,3 +83,4 @@ class InvestigationResult(BaseModel):
     signal: SignalResult
     ambiguity: AmbiguityResult
     narrative: str
+    telemetry: Optional[LLMTelemetry] = None

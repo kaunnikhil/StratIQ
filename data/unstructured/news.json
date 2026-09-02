@@ -16,5 +16,17 @@
     "week": 5,
     "region": "Pune",
     "text": "A rival two-wheeler financier announces a zero-down-payment scheme for new customers in the Pune region."
+  },
+  {
+    "id": "ANW-01",
+    "week": 7,
+    "region": "Aurangabad",
+    "text": "Local two-wheeler demand remained mixed this month, with dealers reporting uneven showroom activity."
+  },
+  {
+    "id": "ANW-02",
+    "week": 8,
+    "region": "Aurangabad",
+    "text": "Consumers in the region are comparing financing offers amid a competitive lending environment."
   }
 ]

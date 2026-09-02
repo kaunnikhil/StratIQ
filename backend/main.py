@@ -44,11 +44,11 @@ def investigate(req: InvestigateRequest):
         store, region=req.region, top_k=10,
     )
     llm = get_llm_client()
-    scored = run_hypothesis_engine(llm, bundle)
+    scored, telemetry = run_hypothesis_engine(llm, bundle)
     ambiguity = assess_ambiguity(scored, bundle)
     narrative = build_narrative(signal, ambiguity)
 
-    return InvestigationResult(signal=signal, ambiguity=ambiguity, narrative=narrative)
+    return InvestigationResult(signal=signal, ambiguity=ambiguity, narrative=narrative, telemetry=telemetry)
 
 
 @app.get("/health")

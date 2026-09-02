@@ -5,13 +5,19 @@ or an API key, which matters when recording a demo under time pressure.
 """
 import json
 import os
+import time
 from typing import List, Protocol
 
 from dotenv import load_dotenv
 
-from backend.models import EvidenceBundle, Hypothesis
+from backend.models import EvidenceBundle, Hypothesis, LLMTelemetry
 
 load_dotenv()
+
+# Approximate published Gemini 3.6 Flash pricing (USD per 1M tokens) as of
+# this build. Not fetched live; update here if pricing changes.
+GEMINI_PRICE_PER_1M_INPUT = 1.50
+GEMINI_PRICE_PER_1M_OUTPUT = 7.50
 
 
 class LLMConfigurationError(Exception):
@@ -65,16 +71,34 @@ class GeminiHypothesisLLM:
         # deprecated (Google has renamed its default Flash model multiple
         # times recently) — avoids needing a code change to recover.
         self.model = model or os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
+        self.last_telemetry: LLMTelemetry = None
 
     def generate_hypotheses(self, bundle: EvidenceBundle) -> List[Hypothesis]:
         from google import genai
         client = genai.Client(api_key=self.api_key)
         prompt = _build_prompt(bundle)
+
+        start = time.monotonic()
         response = client.models.generate_content(
             model=self.model,
             contents=prompt,
             config={"response_mime_type": "application/json"},
         )
+        latency = time.monotonic() - start
+
+        usage = getattr(response, "usage_metadata", None)
+        prompt_tokens = getattr(usage, "prompt_token_count", 0) or 0
+        output_tokens = getattr(usage, "candidates_token_count", 0) or 0
+        total_tokens = getattr(usage, "total_token_count", 0) or (prompt_tokens + output_tokens)
+        cost = (prompt_tokens / 1_000_000 * GEMINI_PRICE_PER_1M_INPUT) + \
+               (output_tokens / 1_000_000 * GEMINI_PRICE_PER_1M_OUTPUT)
+
+        self.last_telemetry = LLMTelemetry(
+            provider="gemini", model=self.model, latency_seconds=round(latency, 3),
+            prompt_tokens=prompt_tokens, output_tokens=output_tokens, total_tokens=total_tokens,
+            estimated_cost_usd=round(cost, 6), is_llm_call=True,
+        )
+
         raw = json.loads(response.text)
         return [Hypothesis(**h) for h in raw]
 
@@ -88,7 +112,11 @@ class OfflineHeuristicLLM:
     step, only a safety net for live-demo reliability.
     """
 
+    def __init__(self):
+        self.last_telemetry: LLMTelemetry = None
+
     def generate_hypotheses(self, bundle: EvidenceBundle) -> List[Hypothesis]:
+        start = time.monotonic()
         hypotheses = []
         counts = bundle.source_record_counts
         unstruct = bundle.unstructured_evidence
@@ -133,6 +161,12 @@ class OfflineHeuristicLLM:
                 contradictory_evidence_ids=[],
                 relevant_weeks=[bundle.signal.anomaly_start_week],
             ))
+        latency = time.monotonic() - start
+        self.last_telemetry = LLMTelemetry(
+            provider="offline_heuristic", model="rule_based_v1", latency_seconds=round(latency, 4),
+            prompt_tokens=0, output_tokens=0, total_tokens=0, estimated_cost_usd=0.0,
+            is_llm_call=False,
+        )
         return hypotheses[:5] if hypotheses else [Hypothesis(
             statement="Insufficient distinguishing evidence to propose a specific hypothesis.",
             mechanism="No structured or unstructured evidence source showed a clear pattern.",

@@ -78,6 +78,10 @@ def score_hypotheses(hypotheses: List[Hypothesis], bundle: EvidenceBundle) -> Li
     return scored
 
 
-def run_hypothesis_engine(llm: HypothesisLLM, bundle: EvidenceBundle) -> List[ScoredHypothesis]:
+def run_hypothesis_engine(llm: HypothesisLLM, bundle: EvidenceBundle):
+    """Returns (scored_hypotheses, telemetry). Telemetry is None if the
+    provider doesn't expose a `last_telemetry` attribute."""
     raw_hypotheses = llm.generate_hypotheses(bundle)
-    return score_hypotheses(raw_hypotheses, bundle)
+    scored = score_hypotheses(raw_hypotheses, bundle)
+    telemetry = getattr(llm, "last_telemetry", None)
+    return scored, telemetry

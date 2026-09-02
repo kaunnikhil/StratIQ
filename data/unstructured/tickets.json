@@ -58,5 +58,17 @@
     "week": 7,
     "region": "Pune",
     "text": "Follow-up delayed again, customer frustrated with response time."
+  },
+  {
+    "id": "ATK-01",
+    "week": 7,
+    "region": "Aurangabad",
+    "text": "Customer said they are still deciding between financing options."
+  },
+  {
+    "id": "ATK-02",
+    "week": 8,
+    "region": "Aurangabad",
+    "text": "Customer reported a slower response than expected and asked for a callback."
   }
 ]

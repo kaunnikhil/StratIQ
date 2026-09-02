@@ -56,3 +56,30 @@ GROUND_TRUTH_PATH = "data/ground_truth/suvidha_pune_labels.json"
 
 # Anchor date for week 1 (used to timestamp unstructured docs)
 TIME_ORIGIN = "2025-04-07"
+
+# ---------------- Tier 2 scenarios ----------------
+
+# Sparse-history scenario: only 3 KPI weeks are generated.
+SPARSE_BRANCH = "Pune-VimanNagar-Pilot"
+SPARSE_REGION = "Pune-Pilot"
+SPARSE_WEEKS = 3
+
+# Natural low-confidence scenario.
+AMBIGUOUS_TARGET_REGION = "Aurangabad"
+AMBIGUOUS_CONTROL_REGION = "Nagpur"
+
+AMBIGUOUS_TARGET_BRANCHES = [
+    "Aurangabad-Cidco",
+    "Aurangabad-Waluj",
+    "Aurangabad-Garkheda",
+]
+
+AMBIGUOUS_CONTROL_BRANCHES = [
+    "Nagpur-Manewada",
+    "Nagpur-Hingna",
+    "Nagpur-Sadar",
+]
+
+AMBIGUOUS_ANOMALY_START_WEEK = 7
+AMBIGUOUS_ANOMALY_END_WEEK = 12
+AMBIGUOUS_DROP_PCT = 0.12

@@ -46,5 +46,17 @@
     "week": 6,
     "region": "Pune",
     "text": "Switched to a competitor because of the zero down payment deal, sorry Suvidha."
+  },
+  {
+    "id": "ASM-01",
+    "week": 7,
+    "region": "Aurangabad",
+    "text": "Still deciding which bike loan option makes the most sense."
+  },
+  {
+    "id": "ASM-02",
+    "week": 8,
+    "region": "Aurangabad",
+    "text": "Loan process felt a little slower this week."
   }
 ]

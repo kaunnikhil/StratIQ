@@ -21,16 +21,22 @@ def _evidence_gap(h: ScoredHypothesis) -> str:
 
 
 def _next_action(h: ScoredHypothesis, bundle: EvidenceBundle) -> str:
-    text = h.statement.lower()
+    # Match on statement + mechanism together, since Gemini's exact phrasing
+    # varies (e.g. "credit underwriting standards" / "rejection rates" has no
+    # literal "credit score" or "cibil" substring, but contains "rate" —
+    # which used to false-match the repo-rate branch below). Credit-related
+    # checks are ordered before the repo-rate check, and the repo-rate check
+    # now requires specific terms rather than a bare "rate" substring.
+    text = (h.statement + " " + h.mechanism).lower()
     if "competitor" in text or "rival" in text:
         return "Pull competitor pricing/scheme data at the branch level and compare loan-decline reasons cited by customers."
-    if "flood" in text or "footfall" in text:
+    if "flood" in text or "footfall" in text or "rain" in text or "waterlog" in text:
         return "Pull daily (not weekly) footfall data for the flood-affected branches to confirm the recovery timeline matches the disbursal drop."
-    if "agent" in text or "staff" in text:
+    if "agent" in text or "staff" in text or "attrition" in text or "sourcing" in text:
         return "Compare disbursal trends specifically in the two attrition-affected branches versus the other four Pune branches."
-    if "cibil" in text or "credit score" in text:
+    if "cibil" in text or "credit score" in text or "underwriting" in text or "credit" in text:
         return "Check whether the national CIBIL cutoff change shows a comparable rejection-rate increase in the control region."
-    if "repo" in text or "rate" in text or "emi" in text:
+    if "repo" in text or "interest rate" in text or "emi" in text:
         return "Check whether the control region shows a comparable disbursal dip after the same repo rate change."
     return "Escalate to the relevant branch manager or dealer partner for direct, on-the-ground confirmation."
 
